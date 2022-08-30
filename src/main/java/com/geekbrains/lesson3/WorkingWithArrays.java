@@ -27,8 +27,8 @@ public class WorkingWithArrays {
         int[] arr7 = {1, 1, 1, 2, 1};
         System.out.println( method7( arr7 ) );
 
-        System.out.println("8-ое метод");
-        int[] arr8 = {3, 5, 6, 1};
+        System.out.println("8-ой метод");
+        int[] arr8 = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(arr8));
         method8( arr8, -2 );
         System.out.println(Arrays.toString(arr8));
@@ -45,7 +45,6 @@ public class WorkingWithArrays {
      */
     public static void method8(int[] arr, int n) {
         int direct = 0;         // направление движения n к 0: -1 или 1
-        int an = 0;              // модуль n
         if ( n > 0 ){           // опускаем n до 0
             direct = 1;         // Движемся по матрице вправо
         } else if (n < 0) {     // поднимаем n до 0
@@ -60,23 +59,27 @@ public class WorkingWithArrays {
             int stack_len = 0;
 
             for (int i = 0; i < arr.length; i++ ){
-                System.out.println("n = "+n+",dir = "+direct+", i = " +i );
-                if ((i==0) && (direct > 0)){
-                    stack_in = arr[1];
-                    stack_out = stack_in;
-                    arr[1]=arr[0];
-                    arr[0] = arr[arr.length-1];
-                } else if ((i>=0) && (i< (arr.length-1)) && (direct>0)){
-                    stack_in = arr[i+1];
-                    arr[i+1] = stack_out;
-                    stack_out = stack_in;
-                } else if ((i==0) && (direct < 0)) {
-                    stack_in = arr[0];
-                    arr[0]=arr[1];
-                } else if ((i>=0) && (i< (arr.length-1)) && (direct<0)) {
-                    arr[i]= arr[i+1];
-                } else if ((i == (arr.length-1)) && (direct<0)) {
-                    arr[arr.length-1] = stack_in;
+                //System.out.println("n = "+n+",dir = "+direct+", i = " +i );
+                if (direct>0){
+                    if (i==0) {
+                        stack_in = arr[1];
+                        stack_out = stack_in;
+                        arr[1]=arr[0];
+                        arr[0] = arr[arr.length-1];
+                    } else if ((i>=0) && (i< (arr.length-1)) ){
+                        stack_in = arr[i+1];
+                        arr[i+1] = stack_out;
+                        stack_out = stack_in;
+                    }
+                }else{
+                    if (i==0){
+                        stack_in = arr[0];
+                        arr[0]=arr[1];
+                    } else if ((i>=0) && (i< (arr.length-1))) {
+                        arr[i]= arr[i+1];
+                    } else if (i == (arr.length-1)){
+                        arr[arr.length-1] = stack_in;
+                    }
                 }
             }
             n = n - 1;
