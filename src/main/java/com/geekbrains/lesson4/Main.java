@@ -10,10 +10,10 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        int sizeFiled = 5;
-        String star = "*";
-        String X = "X";
-        String O = "O";
+        int sizeFiled = 5;  // размер игрового поля
+        String star = "*";  // символ пустого поля
+        String X = "X";     // символ хода игрока
+        String O = "O";     // символ хода программы
         String[][] GameField =  prepareGameField( sizeFiled, star );
         printField(GameField);
         do {
@@ -159,8 +159,8 @@ public class Main {
     }
 
     /**
-     *   ход программы
-     *   ставит большие буквы О англ.
+     *   ход программы - как оппонента игроку
+     *   ставит большие буквы "О" англ.
      */
     public static void progtammMotion(String[][] arr) {
         boolean check = true;
