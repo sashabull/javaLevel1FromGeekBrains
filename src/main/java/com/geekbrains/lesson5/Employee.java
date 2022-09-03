@@ -15,13 +15,13 @@ public class Employee {
 
     /**
      * конструктор с инициализацией всех полей
-     * @param surname
+     * @param surname       - Фамилия
      * @param name
-     * @param patronymic
-     * @param position
+     * @param patronymic    - Отчество
+     * @param position      - Должность
      * @param email
      * @param phone
-     * @param salary
+     * @param salary        - з/п
      * @param age
      */
     public Employee( String surname,
