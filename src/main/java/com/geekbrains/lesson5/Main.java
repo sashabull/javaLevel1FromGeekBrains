@@ -1,5 +1,4 @@
 package com.geekbrains.lesson5;
-import com.geekbrains.lesson5.Employee.*;
 
 public class Main {
     public static void main(String[] args) {
