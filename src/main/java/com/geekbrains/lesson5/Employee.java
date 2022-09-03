@@ -13,6 +13,17 @@ public class Employee {
     private Integer salary;         // зарплата
     private Integer age;            // возраст
 
+    /**
+     * конструктор с инициализацией всех полей
+     * @param surname
+     * @param name
+     * @param patronymic
+     * @param position
+     * @param email
+     * @param phone
+     * @param salary
+     * @param age
+     */
     public Employee( String surname,
                      String name,
                      String patronymic,
